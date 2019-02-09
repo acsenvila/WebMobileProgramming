@@ -1,0 +1,62 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+!-->
+
+<html>
+<head>
+    <title>Button Fun</title>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <style>
+        button{
+            height:100px;
+            width:150px;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+    </style>
+    <script type="text/javascript">
+        // function to change class
+        function changeColor($elm, classes) {
+            var className = $elm.attr('class');
+            var index = $.inArray(className, classes);
+
+            $elm.removeClass(className);
+            index++;
+            if (index === classes.length) {
+                index = 0;
+            }
+            $elm.addClass(classes[index]);
+        }
+        // equivalent to $(document).ready
+        $(function(){
+            // cache button element
+            var $button = $("#dynamic-button");
+            var classes = ["red", "green", "blue"];
+            // attach event with $button
+            $button.on("click", function (){
+                changeColor($(this), classes);
+            });
+        });
+    </script>
+</head>
+<body>
+<button id="dynamic-button" class="blue">Press</button>
+</body>
+</html>
