@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.gkmicro.pizzaorder.MainActivity">
+
+    <ScrollView
+        android:id="@+id/pizza_order_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/pizza_order"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:hint="Name"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:id="@+id/name" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Address"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/pizza_type_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pizza Type"
+                    android:textSize="30dp"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:singleLine="true" />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RadioButton android:id="@+id/pizza_small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$8 - Small "
+                        android:onClick="onRadioButtonClicked"/>
+                    <RadioButton android:id="@+id/pizza_med"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$10 - Medium"
+                        android:onClick="onRadioButtonClicked"/>
+                    <RadioButton android:id="@+id/pizza_large"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$15 - Large"
+                        android:onClick="onRadioButtonClicked"/>
+                    <RadioButton android:id="@+id/pizza_xlarge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$18 - Extra Large"
+                        android:onClick="onRadioButtonClicked"/>
+                </RadioGroup>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/pizza_specials_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Specials"
+                android:textSize="30dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton android:id="@+id/pizza_cheese"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$3 - Super Cheesy "
+                        android:onClick="onRadioButtonSpecialsClicked"/>
+                    <RadioButton android:id="@+id/pizza_meaty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$5 - Super Meaty"
+                        android:onClick="onRadioButtonSpecialsClicked"/>
+                    <RadioButton android:id="@+id/pizza_veggy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$2 - Super Veggy"
+                        android:onClick="onRadioButtonSpecialsClicked"/>
+                </RadioGroup>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/pizza_extras"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Extras"
+                android:textSize="30dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <TextView
+                android:id="@+id/extra_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="$1.50 Each"
+                android:textSize="15dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/xcheese"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Extra Cheese"
+                    android:onClick="onCheckBoxClicked"/>
+
+                <CheckBox
+                    android:id="@+id/xpepp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pepperoni"
+                    android:onClick="onCheckBoxClicked"/>
+
+                <CheckBox
+                    android:id="@+id/xshroom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mushrooms"
+                    android:onClick="onCheckBoxClicked"/>
+
+                <CheckBox
+                    android:id="@+id/xbacon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bacon"
+                    android:onClick="onCheckBoxClicked"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/order_button"
+                style="?android:textAppearanceSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Order Pizza"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
